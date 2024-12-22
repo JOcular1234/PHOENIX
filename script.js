@@ -72,3 +72,95 @@ gsap.to('.first-text-container',{
     ease : 'bounce.out',
     translateY : '-40px',
 })
+
+// SCROLLED UP BTN
+let returnUp = document.querySelector('.up')
+
+        window.addEventListener('scroll', ()=>{
+            if(window.scrollY > 3500){
+                returnUp.style.display = 'block';
+            }else{
+                returnUp.style.display = 'none'
+           
+            }
+            console.log(window.scrollY);
+            
+        });
+        
+        returnUp.addEventListener('click', ()=>{
+            window.scrollTo({
+                top:20,
+                behavior: 'smooth'
+            });
+        });
+
+        // ENDLESS CONTAINER
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const txtcontainer = document.getElementById('endless-memes-div');
+      
+            const handleScroll = () => {
+              const containerPosition = txtcontainer.getBoundingClientRect().top;
+              const screenHeight = window.innerHeight;
+      
+              if (containerPosition < screenHeight) {
+                txtcontainer.classList.add('visible');
+              }
+            };
+      
+            window.addEventListener('scroll', handleScroll);
+          });
+
+        //   WHY CONTAINER SCROLLIN
+        document.addEventListener('DOMContentLoaded', () => {
+            const whyScrollIn = document.getElementById('scrollIn-container');
+      
+            const handleScrollIn = () => {
+              const scrollInPosition = whyScrollIn.getBoundingClientRect().top;
+              const screenHeights = window.innerHeight;
+      console.log(screenHeights);
+      
+              if (scrollInPosition < screenHeights) {
+                whyScrollIn.classList.add('visible');
+              }
+            };
+      
+            window.addEventListener('scroll', handleScrollIn);
+          });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const whyScrollIn2 = document.getElementById('scrollIn-container2');
+      
+            const handleScrollIn2 = () => {
+              const scrollInPosition2 = whyScrollIn2.getBoundingClientRect().top;
+              const screenHeights2 = window.innerHeight;
+      console.log(screenHeights2);
+      
+              if (scrollInPosition2 < screenHeights2) {
+                whyScrollIn2.classList.add('visible');
+              }
+            };
+      
+            window.addEventListener('scroll', handleScrollIn2);
+          });
+
+        //   LOGO SCROLL JS
+        let root = document.documentElement;
+    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+    const marqueeContent = document.querySelector("ul.marquee-content");
+    
+    root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+    
+    for(let i=0; i<marqueeElementsDisplayed; i++) {
+      marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+    };
+
+       root = document.documentElement;
+    const marqueeElementsDisplayed1 = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed1");
+    const marqueeContent1 = document.querySelector("ul.marquee1-content");
+    
+    root.style.setProperty("--marquee-elements1", marqueeContent1.children.length);
+    
+    for(let i=0; i<marqueeElementsDisplayed1; i++) {
+      marqueeContent1.appendChild(marqueeContent1.children[i].cloneNode(true));
+    };
